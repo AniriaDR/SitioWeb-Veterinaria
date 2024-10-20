@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos - Piojitos</title>
+    <link rel="stylesheet" href="css/ProdAdmn.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="img/Piojitos-01.svg" alt="Piojitos Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Sobre Nosotros</a></li>
+                    <li><a href="#">Promociones</a></li>
+                    <li><a href="#">Productos</a></li>
+                    <li><a href="#">Agendar Cita</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="products">
+            <h1>Productos</h1>
+
+            <div class="tabs">
+                <button class="tab-btn active" data-category="alimentos">Alimentos</button>
+                <button class="tab-btn" data-category="farmacia">Farmacia</button>
+                <button class="tab-btn" data-category="accesorios">Accesorios</button>
+            </div>
+
+            <div id="carousel-container" class="carousel-container">
+                <!-- Productos dinámicos se cargarán aquí -->
+            </div>
+
+            <button class="edit-button" onclick="location.href='ProdAdmnEdit.html'">Editar</button>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-icons">
+            <a href="#"><img src="facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="twitter.png" alt="Twitter"></a>
+            <a href="#"><img src="instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="youtube.png" alt="YouTube"></a>
+        </div>
+        <p>© 2024 Piojitos. All rights reserved</p>
+    </footer>
+
+    <script src="js/prodAdmn.js"></script>
+</body>
+</html>
