@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo Producto - Piojitos</title>
+    <link rel="stylesheet" href="css/formProd.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="img/Piojitos-01.svg" alt="Logo Piojitos">
+        </div>
+        <nav class="navbar">
+            <a href="#">Inicio</a>
+            <a href="#">Sobre Nosotros</a>
+            <a href="#">Promociones</a>
+            <a href="#">Productos</a>
+            <a href="#">Agendar Cita</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Nuevo Producto.</h2>
+        <form action="#" class="product-form">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" placeholder="Nombre del producto">
+
+            <label for="detalles">Detalles</label>
+            <textarea id="detalles" placeholder="Detalles del producto"></textarea>
+
+            <label for="categoria">Categoría</label>
+            <select id="categoria">
+                <option value="">Select one...</option>
+                <option value="alimentos">Alimentos</option>
+                <option value="farmacia">Farmacia</option>
+                <option value="accesorios">Accesorios</option>
+            </select>
+
+            <label for="imagen">Imagen</label>
+            <div id="drop-area">
+                <p>Arrastra y suelta una imagen aquí o haz clic para seleccionar una</p>
+                <input type="file" id="imagen" accept="image/*" onchange="handleFileSelect(event)">
+            </div>
+
+            <button type="submit">Aceptar</button>
+        </form>
+
+        <div class="social-icons">
+            <a href="#"><img src="facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="twitter.png" alt="Twitter"></a>
+            <a href="#"><img src="instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="youtube.png" alt="YouTube"></a>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 Piojitos. All rights reserved</p>
+    </footer>
+
+    <script src="js/formProd.js"></script>
+</body>
+</html>
