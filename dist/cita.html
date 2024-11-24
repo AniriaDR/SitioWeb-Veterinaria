@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>piojitos</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+
+    <title>PIOJITOS</title>
+
+    <link rel="stylesheet" href="https://api.fontshare.com/css?f[]=satoshi@1,300,301,700&f[]=clash-grotesk@1,200,201,600&f[]=quicksand@1,500,600,700&display=swap">
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Satoshi', sans-serif;
+      }
+
+      body {
+        font-family: 'Satoshi', sans-serif;
+        user-select: none;
+        overflow-x: hidden;
+        background-color: #fbfbf0;
+        color: #2f2f2f;
+        transition: background-color 0.5s, color 0.5s;
+        width:100%;
+      }
+      main {
+        padding:0 2rem;
+      }
+      .dark-mode {
+        background-color: #2f2f2f;
+        color: #f6f6dc;
+      }
+
+      .top-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        z-index:12;
+        position: -webkit-sticky;
+        position: sticky;
+        top:1rem;
+      }
+
+      .top-bar a {
+        font-weight: bold;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: inherit;
+        margin-right: 1rem;
+      }
+
+      .top-bar button {
+        font-weight: bold;
+        text-transform: uppercase;
+        cursor: pointer;
+        padding: 0.5rem 1rem;
+        border: none;
+        background-color: #2f2f2f;
+        color: #f6f6dc;
+        border-radius: 4px;
+      }
+
+      .header {
+        text-align: center;
+        margin: 0 auto;
+        max-width: 1200px;
+      }
+
+      .header h1 {
+        font-family: 'Clash Grotesk', sans-serif;
+        font-weight: 700;
+        font-size: 60px;
+        margin-bottom: 0.5rem;
+      }
+
+      .nav-bar ul {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        padding: 0;
+      }
+
+      .nav-bar li {
+        margin: 0 1rem;
+      }
+
+      .nav-bar a {
+        font-weight: 300;
+        text-decoration: none;
+        color: inherit;
+        font-size: 1.25rem;
+      }
+      .title-section, .subtitle-section {
+        position: relative;
+      }
+      .main-section {
+        padding:  2rem;
+        padding-top:10rem;
+        text-align: center;
+        height:100vh;
+        min-height:100vh;
+        /*
+        */
+      }
+
+      .main-section h2 {
+        font-family: 'Clash Grotesk', sans-serif;
+        font-weight: 600;
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .main-section p {
+        font-weight: 300;
+        font-size: 1.25rem;
+        margin-bottom: 2rem;
+      }
+
+      .swiper-container {
+        width: 100%;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+      }
+
+      .swiper-slide {
+        background-size: cover;
+        background-position: center;
+        & img {
+          width:100%;
+        }
+      }
+
+      .team {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 2rem;
+        padding: 2rem 1rem;
+      }
+
+      .team-member {
+        flex: 1 1 200px;
+        text-align: center;
+      }
+
+
+
+      .image-gallery {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.image-item {
+  width: 500px;
+  text-align: center;
+}
+
+.image-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.image-item h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 1rem 0 0.5rem;
+}
+
+.image-item p {
+  font-size: 1rem;
+  color: #555;
+}
+
+   
+
+      .menu-toggle {
+        display: none;
+      }
+
+      .hamburger {  
+        display: none;
+        cursor: pointer;
+      }
+
+      .dark-mode .top-bar button {
+        background-color: #444;
+      }
+
+      @media (max-width: 767px) {
+        .hamburger {
+          display: block;
+        }
+
+        .nav-bar {
+          display: none;
+        }
+
+        .menu-toggle:checked+.nav-bar {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .header h1 {
+          font-size: 40px;
+        }
+      }
+
+      .toggle-button-cover {
+        display: table-cell;
+        position: relative;
+        box-sizing: border-box;
+        transform:scale(0.45);
+        transform-origin:center right;
+      }
+
+      .button-cover {
+        height: 100px;
+        margin: 20px;
+        background-color: #fff;
+        box-shadow: 0 10px 20px -8px #c5d6d6;
+        border-radius: 4px;
+      }
+
+      .button-cover:before {
+        counter-increment: button-counter;
+        content: counter(button-counter);
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        color: #d7e3e3;
+        font-size: 12px;
+        line-height: 1;
+        padding: 5px;
+      }
+
+      .button-cover,
+      .knobs,
+      .layer {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+      }
+
+      .button {
+        position: relative;
+        top: 50%;
+        width: 74px;
+        height: 36px;
+        margin: -20px auto 0 auto;
+        overflow: hidden;
+      }
+
+      .button.r,
+      .button.r .layer {
+        border-radius: 100px;
+      }
+
+      .button.b2 {
+        border-radius: 2px;
+      }
+
+      .checkbox {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        opacity: 0;
+        cursor: pointer;
+        z-index: 3;
+      }
+
+      .knobs {
+        z-index: 2;
+      }
+
+      .layer {
+        width: 100%;
+        background-color: #f6f6dc;
+        transition: 0.3s ease all;
+        z-index: 1;
+      }
+      #toggle-button .knobs:before {
+        content: "";
+        position: absolute;
+        top: 4px;
+        left: 4px;
+        width: 20px;
+        height: 10px;
+        color: #fff;
+        font-size: 10px;
+        font-weight: bold;
+        text-align: center;
+        line-height: 1;
+        padding: 9px 4px;
+        background-color: #2f2f2f;
+        border-radius: 50%;
+        transition: 0.3s ease all, left 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15);
+      }
+
+      #toggle-button .checkbox:active + .knobs:before {
+        width: 46px;
+        border-radius: 100px;
+      }
+
+      #toggle-button .checkbox:checked:active + .knobs:before {
+        margin-left: -26px;
+      }
+
+      #toggle-button .checkbox:checked + .knobs:before {
+        content: "";
+        left: 42px;
+        background-color: #2f2f2f;
+      }
+
+      #toggle-button .checkbox:checked ~ .layer {
+        background-color: #fcebeb;
+      }
+
+      /* ********************************** */
+/*             CATEGORIES             */
+/* ********************************** */
+
+.top-categories {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	margin-bottom: 3rem;
+}
+
+.container-categories {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 3rem;
+}
+
+.card-category {
+	height: 18rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	border-radius: 2rem;
+	gap: 2rem;
+}
+
+.category-nuevo {
+	background-image: linear-gradient(#00000080, #00000080),
+		url('/tarjetasimg/productos.jpg');
+	background-size: cover;
+	background-position: bottom;
+	background-repeat: no-repeat;
+}
+
+.category-favoritos {
+	background-image: linear-gradient(#00000080, #00000080),
+		url('/tarjetasimg/favgat.jpg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.category-prote {
+	background-image: linear-gradient(#00000080, #00000080),
+		url('/tarjetasimg/protegelos.jpg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.card-category p {
+	font-size: 1 rem;
+	color: #fff;
+	text-transform: capitalize;
+	position: relative;
+}
+
+.card-category p::after {
+	content: '';
+	width: 2.5rem;
+	height: 2px;
+	background-color: #fff;
+	position: absolute;
+	bottom: -1rem;
+	left: 50%;
+	transform: translate(-50%, 50%);
+}
+
+.card-category span {
+	font-size: 1.6rem;
+	color: #fff;
+	cursor: pointer;
+}
+
+.card-category span:hover {
+	color: var(--primary-color);
+}
+
+/* TARJETAS PROMO  ( DERECHA)*/
+
+.card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .card-content {
+    display: flex;
+    width: 100%;
+  }
+
+  .card-image {
+    flex: 1;
+    padding: 20px;
+  }
+
+  .card-image img {
+    width: 50%;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+
+  .card-text {
+    flex: 2;
+    padding: 20px;
+  }
+
+  .card-text h3 {
+    font-size: 1.75rem;
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
+
+  .card-text p {
+    font-size: 1rem;
+    color: #555;
+  }
+
+/* TARJETAS PROMO  (IZQUIERDA)*/
+
+.card-reverse {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .card-content-reverse {
+    display: flex;
+    width: 100%;
+  }
+
+  .card-text-reverse {
+    flex: 2;
+    padding: 20px;
+  }
+
+  .card-text-reverse h3 {
+    font-size: 1.75rem;
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
+
+  .card-text-reverse p {
+    font-size: 1rem;
+    color: #555;
+  }
+
+  .card-image-reverse {
+    flex: 1;
+    padding: 20px;
+  }
+
+  .card-image-reverse img {
+    width: 50%;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+
+
+  h1 {
+    font-family: "Dosis", sans-serif;
+    color: #b695d9;
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+button {
+    background-color: #fff;
+    border: 2px solid #b695d9;
+    color: #b695d9;
+    padding: 10px 20px;
+    margin: 20px;
+    cursor: pointer;
+    border-radius: 20px;
+    font-family: "Dosis", sans-serif;
+}
+button.active {
+    background-color: #b695d9;
+    color: #fff;
+    font-family: "Dosis", sans-serif;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+
+.tabs button {
+    background-color: #fff;
+    border: 2px solid #b695d9;
+    color: #b695d9;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    border-radius: 20px;
+    font-family: "Dosis", sans-serif;
+}
+
+.tabs button.active {
+    background-color: #b695d9;
+    color: #fff;
+    font-family: "Dosis", sans-serif;
+}
+
+.carousel-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    transition: opacity 0.5s;
+}
+
+.product {
+    width: 30%;
+    text-align: center;
+}
+
+.product img {
+    width: 500px;
+    margin-bottom: 20px;
+}
+
+.product h2 {
+    font-family: "Dosis", sans-serif;
+    color: #b695d9;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.product p {
+    color: #666;
+    font-size: 14px;
+}
+
+
+
+
+/* Sección de título */
+.title-section h1 {
+    font-size: 32px;
+    color: #9ac7dd;
+    text-align: center;
+    margin: 20px 0;
+    font-weight: bold;
+}
+
+/* Sección de citas */
+.appointments {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    max-width: 600px;
+    width: 100%;
+    padding: 0 20px;
+    margin-top: 30px;
+}
+
+.appointment-card {
+    background-color: #f0f8ff;
+    border: 2px solid #9ac7dd;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 250px;
+    transition: transform 0.3s ease;
+}
+
+.appointment-card:hover {
+    transform: translateY(-5px);
+}
+
+.appointment-card h2 {
+    font-size: 24px;
+    color: #9ac7dd;
+    margin-bottom: 15px;
+}
+
+.appointment-card img {
+    width: 80px;
+    height: auto;
+    margin: 15px 0;
+}
+
+.appointment-card button {
+    background-color: #9ac7dd;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.appointment-card button:hover {
+    background-color: #7aa9c0;
+}
+
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo de la barra de navegación */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   
+    padding: 10px 20px;
+    color: white;
+}
+
+.logo a {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #1abc9c;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    background-color: white;
+    height: 3px;
+    width: 25px;
+    margin: 3px 0;
+}
+
+/* Responsivo */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+       
+        width: 200px;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      footer {
+  
+    padding: 20px;
+    text-align: center;
+}
+
+      
+    </style>
+  </head>
+  <body>
+
+    <main data-scroll-container class="content" id="top">
+
+      <div class="top-bar">        
+
+        <div>
+          <a class="go" href="/dist/index.html"></a>
+        </div>
+
+        <div id="dark-mode-toggle" class="toggle-button-cover">
+          <div class="button r" id="toggle-button">
+            <input type="checkbox" class="checkbox" />
+            <div class="knobs"></div>
+            <div class="layer"></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="header" data-scroll-section>
+
+        <header>
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="#"></a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#productos">Productos</a></li>
+                    <li><a href="#promociones">Promociones</a></li>
+                    <li><a href="#citas">Agendar Cita</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </header>
+        <script src="/dist/burgir.js"></script>
+
+      <section id="home" class="main-section" data-scroll-section>
+        <h2 class="title-section" data-scroll data-scroll-speed="1">PRODUCTOS PIOJITOS</h2>
+        <p class="subtitle-section" data-scroll data-scroll-speed="2">Un espacio libre para todos nuestros amigos peludos en donde podran encontrar
+          seguridad en sus consultas y tratado de limpieza y salud y porque no uno que otro detallito para complacerlos</p>
+
+
+          <section class="title-section">
+            <h1>Citas.</h1>
+          </section>
+        
+          <!-- Sección de Citas -->
+          <section class="appointments">
+            <div class="appointment-card">
+              <h2>Agenda tu cita.</h2>
+              <img src="/img/contactos.png" alt="Agenda Icon">
+              <button>Comenzar.</button>
+            </div>
+            <div class="appointment-card">
+              <h2>Tus citas.</h2>
+              <img src="/img/cita.png" alt="Citas Icon">
+              <button>Ver.</button>
+            </div>
+          </section>
+
+          
+  
+
+            
+        </section>
+  
+
+      
+
+
+           
+      </section><br><br><br><br>
+    
+  
+
+      <br><br><br><br>
+
+      <footer data-scroll-section>
+        
+        <div class="social-icons">
+          <a href="#"><img src="/img logos y iconos/facebook.png" alt="Facebook"></a>
+          <!-- <a href="#"><img src="twitter_icon.png" alt="Twitter"></a> -->
+          <a href="#"><img src="/img logos y iconos/instagram.png" alt="Instagram"></a>
+          <!-- <a href="#"><img src="youtube_icon.png" alt="YouTube"></a> -->
+      </div>
+      <br>
+      <p>© 2024 Piojitos.</p>
+      </footer>
+
+    
+
+
+
+
+
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollToPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    
+    <script src="/dist/prodAdmn.js"></script>
+  </body>
+</html>
+
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>

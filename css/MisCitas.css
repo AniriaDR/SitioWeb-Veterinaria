@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Dosis", sans-serif;
+    background-color:  #fbfbf0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+    background-color:  #fbfbf0;
+}
+
+.logo img {
+    width: 150px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #b695d9;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+nav ul li a:hover {
+    color: #9e77b7;
+}
+
+main {
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+    margin-top: 50px;
+}
+
+h2 {
+    color: #9ac7dd;
+    font-size: 32px;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.appointment-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.appointment {
+    background-color:  #fbfbf0;
+    padding: 3% 15%;
+    border-radius: 10px;
+    text-align: left;
+    font-size: 16px;
+}
+
+.appointment h3 {
+    color: #9ac7dd;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.appointment p {
+    margin-bottom: 8px;
+}
+
+.appointment button,
+.confirm {
+    background-color: #9ac7dd;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.appointment button:hover,
+.confirm:hover {
+    background-color: #7aa9c0;
+}
+
+.confirm {
+    align-self: center;
+    margin-top: 20px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px 0;
+    font-size: 14px;
+    color: #999;
+    width: 100%;
+    border-top: 1px solid #ddd;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.social-icons a img {
+    width: 30px;
+    height: 30px;
+}

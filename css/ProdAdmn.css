@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Dosis", sans-serif;
+    background-color:#fbfbf0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.header-container {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    background-color: #fbfbf0;
+}
+
+.logo img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #b695d9;
+    font-size: 18px;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #9e77b7;
+}
+h1 {
+    font-family: "Dosis", sans-serif;
+    color: #b695d9;
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+button {
+    background-color: #fbfbf0;
+    border: 2px solid #b695d9;
+    color: #b695d9;
+    padding: 10px 20px;
+    margin: 20px;
+    cursor: pointer;
+    border-radius: 20px;
+    font-family: "Dosis", sans-serif;
+}
+button.active {
+    background-color: #b695d9;
+    color: #fff;
+    font-family: "Dosis", sans-serif;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+
+.tabs button {
+    background-color: #fbfbf0;
+    border: 2px solid #b695d9;
+    color: #b695d9;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    border-radius: 20px;
+    font-family: "Dosis", sans-serif;
+}
+
+.tabs button.active {
+    background-color: #b695d9;
+    color: #fff;
+    font-family: "Dosis", sans-serif;
+}
+
+.carousel-container {
+    display: flex;
+    justify-content: center; 
+    width: 100vw;
+    height: auto;
+    gap: 2px;
+    padding: 5px 0;
+    overflow-x: hidden;
+}
+
+.product {
+    min-width: 30vw;
+    max-width: 33vw;
+    padding: 5%;
+    text-align: center;
+}
+
+.product img {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.product h2 {
+    font-family: "Dosis", sans-serif;
+    color: #b695d9;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.product p {
+    color: #666;
+    font-size: 14px;
+}
+
+
+.edit-button {
+    background-color: #b695d9;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 40px;
+    font-family: "Dosis", sans-serif;
+}
+
+.edit-button:hover {
+    background-color: #9e77b7;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #fbfbf0;
+    border-top: 1px solid #ddd;
+}
+
+.social-icons a img {
+    width: 25px;
+    margin: 0 10px;
+}
+
+footer p {
+    color: #666;
+    font-size: 12px;
+}
+
+.carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #b695d9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 1;
+}
+
+.carousel-nav.prev {
+    left: 10px;
+}
+
+.carousel-nav.next {
+    right: 10px;
+}
+
+.carousel-nav.next:hover,
+.carousel-nav.prev:hover{
+    background-color: #b695d9;
+    color: #fbfbf0;
+}

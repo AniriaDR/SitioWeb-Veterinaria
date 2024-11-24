@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda tu cita | Piojitos</title>
+    <link rel="stylesheet" href="css/formCitas.css">
+    <link rel="shortcut icon" href="img/Piojitos-Logo.svg">
+</head>
+<body>
+    <header class="header-container">
+        <div class="logo" onclick="location.href='AdminIndex.html'" style="cursor: pointer;">
+            <img src="img/Piojitos-01.svg" alt="Piojitos">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="AdminIndex.html">Inicio</a></li>
+                <li><a href="ProductosAdmn.html">Productos</a></li>
+                <li><a href="verCitasAdmin.html">Agendar Cita</a></li>
+                <li>
+                    <form action="logout.php" method="POST">
+                        <button type="submit"
+                            style="font-family:Dosis, sans-serif; background-color: #b695d9; 
+                                 color: white;padding: 5px; border: none;border-radius: 5px;cursor: pointer; margin-top: 0;">Cerrar
+                            Sesión</button>
+                    </form>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <h2>Registra una cita</h2>
+        <div class="form-container">
+            <form action="guardarCita.php" method="POST">
+                <div class="input-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" name="nombre" required>
+                    <label for="apellido">Apellido</label>
+                    <input type="text" name="apellido" required>
+                </div>
+                <div class="input-group">
+                    <label for="mascota">Mascota</label> <br>
+                    <input type="text" name="mascota" required>
+                    <label for="tel">Número teléfonico</label><br>
+                    <input type="tel" name="telefono" pattern="^\d{10}$" minlength="10" maxlength="10" oninput="this.value = this.value.replace(/\s+/g, '')" required>
+                </div>
+                <div class="input-group">
+                    <label for="motivo">Motivo de la cita</label><br>
+                    <select name="razonCita" required>
+                        <option disabled selected>Selecciona uno</option>
+                        <option value="Consulta">Consulta</option>
+                        <option value="Vacunación">Vacunación</option>
+                        <option value="Desparasitación">Desparasitación</option>
+                    </select>
+                    <label for="fecha">Fecha</label><br>
+                    <input type="date" name="fecha" required>
+                </div>
+                <div class="input-group">
+                    <label for="hora">Hora</label><br>
+                    <select name="hora" required>
+                        <option disabled selected>Selecciona uno</option>
+                        <option value="09:00 AM">09:00 AM</option>
+                        <option value="10:00 AM">10:00 AM</option>
+                        <option value="11:00 AM">11:00 AM</option>
+                    </select>
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/"><img src="img/facebook-icon.png" alt="Facebook"></a>
+            <a href="https://www.twitter.com/"><img src="img/twitter-icon.png" alt="Twitter"></a>
+            <a href="https://www.instagram.com/"><img src="img/instagram-icon.png" alt="Instagram"></a>
+            <a href="https://www.youtube.com/"><img src="img/youtube-icon.png" alt="YouTube"></a>
+        </div>
+        <p>© 2024 Piojitos. All rights reserved</p>
+    </footer>
+</body>
+</html>

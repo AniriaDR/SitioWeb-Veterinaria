@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tus citas | Piojitos</title>
+    <link rel="stylesheet" href="css/MisCitas.css">
+    <link rel="shortcut icon" href="img/Piojitos-LogoAdmin.svg">
+</head>
+
+<body>
+    <header class="header-container">
+        <div class="logo" onclick="location.href='AdminIndex.html'" style="cursor: pointer;">
+            <img src="img/Piojitos-01.svg" alt="Piojitos">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="AdminIndex.html">Inicio</a></li>
+                <li><a href="ProductosAdmn.html">Productos</a></li>
+                <li><a href="verCitasAdmin.html">Agendar Cita</a></li>
+                <li>
+                    <form action="logout.php" method="POST">
+                        <button type="submit"
+                            style="font-family:Dosis, sans-serif; background-color: #b695d9; 
+                                 color: white;padding: 5px; border: none;border-radius: 5px;cursor: pointer; margin-top: 0;">Cerrar
+                            Sesión</button>
+                    </form>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Citas</h2>
+        <div class="appointment-list" id="appointment-list" style="text-align: center;">
+        </div>
+        <button class="confirm" onclick="location.href='citasEditarAdmin.html'">Editar</button>
+    </main>
+
+    <footer>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/"><img src="img/facebook-icon.png" alt="Facebook"></a>
+            <a href="https://www.twitter.com/"><img src="img/twitter-icon.png" alt="Twitter"></a>
+            <a href="https://www.instagram.com/"><img src="img/instagram-icon.png" alt="Instagram"></a>
+            <a href="https://www.youtube.com/"><img src="img/youtube-icon.png" alt="YouTube"></a>
+        </div>
+        <p>© 2024 Piojitos. All rights reserved</p>
+    </footer>
+    <script src="js/previsualizarCitasAdmin.js"></script>
+    <script src="js/citaEditar.js"></script>
+</body>
+
+</html>

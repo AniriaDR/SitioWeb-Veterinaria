@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Administrador | Piojitos</title>
+    <link rel="shortcut icon" href="img/Piojitos-LogoAdmin.svg">
+    <style>
+        .carousel {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: auto;
+            margin-top: 20px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .carousel img {
+            width: 100%;
+            display: none;
+        }
+
+        .carousel img.active {
+            display: block;
+        }
+
+        .carousel-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .carousel-prev,
+        .carousel-next {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 24px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header-container">
+        <div class="logo" onclick="location.href='AdminIndex.html'" style="cursor: pointer;">
+            <img src="img/Piojitos-01.svg" alt="Piojitos Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="AdminIndex.html">Inicio</a></li>
+                <li><a href="ProductosAdmn.html">Productos</a></li>
+                <li><a href="verCitasAdmin.html">Agendar Cita</a></li>
+                <li>
+                    <form action="logout.php" method="POST">
+                        <button type="submit"
+                            style="font-family:Dosis, sans-serif; background-color: #b695d9; 
+                                 color: white;padding: 5px; border: none;border-radius: 5px;cursor: pointer; margin-top: 0;">Cerrar
+                            Sesión</button>
+                    </form>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <h1 style="text-align: center;margin-top: 20px;">Bienvenido Admin</h1>
+    <section class="carousel" style="width: 100%;">
+        <img src="img/vet.jpg" alt="Imagen de Veterinaria" class="active">
+        <img src="img/vet2.jpg" alt="Imagen de Veterinaria 2">
+        <img src="img/vet3.jpg" alt="Imagen de Veterinaria 3">
+        <img src="img/vet4.jpg" alt="Imagen de Veterinaria 4">
+        <div class="carousel-buttons">
+            <button class="carousel-prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="carousel-next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+    </section>
+
+    <footer>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/"><img src="img/facebook-icon.png" alt="Facebook"></a>
+            <a href="https://www.twitter.com/"><img src="img/twitter-icon.png" alt="Twitter"></a>
+            <a href="https://www.instagram.com/"><img src="img/instagram-icon.png" alt="Instagram"></a>
+            <a href="https://www.youtube.com/"><img src="img/youtube-icon.png" alt="YouTube"></a>
+        </div>
+        <p>© 2024 Piojitos. All rights reserved</p>
+    </footer>
+    <script>
+        let slideIndex = 0;
+
+        function showSlide(n) {
+            const slides = document.querySelectorAll(".carousel img");
+            slides.forEach(slide => slide.classList.remove("active"));
+            slides[n].classList.add("active");
+        }
+
+        function moveSlide(n) {
+            const slides = document.querySelectorAll(".carousel img");
+            slideIndex = (slideIndex + n + slides.length) % slides.length;
+            showSlide(slideIndex);
+        }
+
+        setInterval(() => {
+            moveSlide(1);
+        }, 5000);
+    </script>
+</body>
+
+</html>

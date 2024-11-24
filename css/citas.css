@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Dosis", sans-serif;
+    background-color: #fbfbf0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.header-container {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    background-color:  #fbfbf0;
+}
+
+.logo img {
+    height: 50px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #b695d9;
+    font-size: 18px;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #9e77b7;
+}
+
+
+.title-section h1 {
+    font-size: 32px;
+    color: #9ac7dd;
+    text-align: center;
+    margin: 20px 0;
+    font-weight: bold;
+}
+
+.appointments {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    max-width: 600px;
+    width: 100%;
+    padding: 0 20px;
+    margin-top: 30px;
+}
+
+.appointment-card {
+    background-color: #f0f8ff;
+    border: 2px solid #9ac7dd;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 250px;
+    transition: transform 0.3s ease;
+}
+
+.appointment-card:hover {
+    transform: translateY(-5px);
+}
+
+.appointment-card h2 {
+    font-size: 24px;
+    color: #9ac7dd;
+    margin-bottom: 15px;
+}
+
+.appointment-card img {
+    width: 80px;
+    height: auto;
+    margin: 15px 0;
+}
+
+.appointment-card button {
+    background-color: #9ac7dd;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.appointment-card button:hover {
+    background-color: #7aa9c0;
+}
+
+footer .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+footer .social-links a img {
+    width: 30px;
+    height: 30px;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+    font-size: 14px;
+    color: #999;
+    border-top: 1px solid #ddd;
+}

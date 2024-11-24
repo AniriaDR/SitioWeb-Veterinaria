@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo Producto | Piojitos</title>
+    <link rel="stylesheet" href="css/formProd.css">
+    <link rel="shortcut icon" href="img/Piojitos-LogoAdmin.svg">
+</head>
+
+<body>
+
+    <header class="header-container">
+        <div class="logo" onclick="location.href='AdminIndex.html'" style="cursor: pointer;">
+            <img src="img/Piojitos-01.svg" alt="Piojitos Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="AdminIndex.html">Inicio</a></li>
+                <li><a href="ProductosAdmn.html">Productos</a></li>
+                <li><a href="verCitasAdmin.html">Agendar Cita</a></li>
+                <li>
+                    <form action="logout.php" method="POST">
+                        <button type="submit"
+                            style="font-family:Dosis, sans-serif; background-color: #b695d9; 
+                             color: white;padding: 5px; border: none;border-radius: 5px;cursor: pointer; margin-top: 0;">Cerrar
+                            Sesión</button>
+                    </form>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Nuevo Producto.</h2>
+        <form action="registrarProducto.php" method="POST" class="product-form" enctype="multipart/form-data">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombreProducto" placeholder="Nombre del producto" required>
+
+            <label for="detalles">Detalles</label>
+            <textarea id="detalles" name="detalles" placeholder="Detalles del producto" required></textarea>
+
+            <label for="categoria">Categoría</label>
+            <select name="categoria" id="categoria" required>
+                <option value="" disabled selected>Selecciona uno...</option>
+                <option value="alimentos">Alimentos</option>
+                <option value="farmacia">Farmacia</option>
+                <option value="accesorios">Accesorios</option>
+            </select>
+
+            <label for="imagen">Imagen</label>
+            <div id="drop-area">
+                <p>Arrastra y suelta una imagen aquí o haz clic para seleccionar una</p>
+                <input type="file" id="imagen" name="imagen" accept="image/*" onchange="handleFileSelect(event)"
+                    required>
+            </div>
+
+            <button class="add-button" type="submit">Aceptar</button>
+        </form>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/"><img src="img/facebook-icon.png" alt="Facebook"></a>
+            <a href="https://www.twitter.com/"><img src="img/twitter-icon.png" alt="Twitter"></a>
+            <a href="https://www.instagram.com/"><img src="img/instagram-icon.png" alt="Instagram"></a>
+            <a href="https://www.youtube.com/"><img src="img/youtube-icon.png" alt="YouTube"></a>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 Piojitos. All rights reserved</p>
+    </footer>
+
+    <script src="js/formProd.js"></script>
+</body>
+
+</html>
